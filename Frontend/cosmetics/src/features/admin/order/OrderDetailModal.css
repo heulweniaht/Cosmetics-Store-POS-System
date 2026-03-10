@@ -1,0 +1,599 @@
+.btn.btn-danger.btn-icon {
+    background: rgba(140, 28, 28, 0.82) !important;
+    color: white !important;
+    height: 30px !important;
+    width: 70px !important; /* Fixed width 40px */
+    min-width: 70px !important; /* Ensure minimum width */
+    max-width: 70px !important; /* Ensure maximum width */
+    border: none !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    padding: 0 4px !important; /* Reduced padding to fit 40px width */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important; /* Include padding in width calculation */
+}
+.btn.btn-danger:hover {
+    background: #2b1111;
+}
+
+.orders-management-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.orders-management-modal-content {
+    background: white;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.orders-management-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #3C95FB;
+}
+
+.orders-management-modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.orders-management-close-button {
+    background: none;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.orders-management-close-button:hover {
+    background: #999a9c;
+}
+
+.orders-management-modal-body {
+    padding: 24px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.orders-management-order-info-section {
+    margin-bottom: 24px;
+}
+
+.orders-management-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.orders-management-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.orders-management-info-item label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.orders-management-info-item span {
+    font-size: 16px;
+    color: #000000;
+}
+
+.orders-management-order-code {
+    font-weight: 600;
+    color: #2563eb;
+}
+
+.orders-management-status-badge {
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.orders-management-order-items-section {
+    margin-bottom: 24px;
+}
+
+.orders-management-order-items-section h3 {
+    margin: 0 0 16px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.orders-management-items-table {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.orders-management-items-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    background: #f8fafc;
+    padding: 12px 16px;
+    font-weight: 600;
+    color: #000000;
+    font-size: 14px;
+}
+
+.orders-management-items-header > div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 80px;
+    padding: 8px 12px;
+}
+
+.orders-management-items-header > div:first-child {
+    justify-content: flex-start;
+}
+
+.orders-management-item-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding: 16px;
+    border-bottom: 1px solid #f3f4f6;
+    align-items: center;
+}
+
+.orders-management-item-row > div {
+    display: flex;
+    align-items: center;
+    min-width: 80px;
+    padding: 8px 12px;
+}
+
+.orders-management-item-row > div:first-child {
+    justify-content: flex-start;
+}
+
+.orders-management-item-row > div:not(:first-child) {
+    justify-content: flex-end;
+}
+
+.orders-management-item-row:last-child {
+    border-bottom: none;
+}
+
+.orders-management-product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.orders-management-product-name {
+    font-weight: 500;
+    color: #000000;
+}
+
+.orders-management-product-id {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.orders-management-col-price,
+.orders-management-col-quantity,
+.orders-management-col-total {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 14px;
+    min-width: 80px;
+    padding: 8px 12px;
+    color: #000000;
+}
+
+.orders-management-col-total {
+    font-weight: 600;
+    color: #059669;
+}
+
+.orders-management-order-summary-section {
+    border-top: 2px solid #e5e7eb;
+    padding-top: 16px;
+    margin-bottom: 24px;
+}
+
+.orders-management-summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8fafc;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.orders-management-total-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.orders-management-total-amount {
+    font-size: 20px;
+    font-weight: 700;
+    color: #059669;
+}
+
+.orders-management-order-notes-section h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.orders-management-order-notes-section p {
+    margin: 0;
+    padding: 12px;
+    background: #fef3c7;
+    border-radius: 6px;
+    color: #92400e;
+    font-style: italic;
+}
+
+.orders-management-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 20px 24px;
+    border-top: 1px solid #e5e7eb;
+    background: #f8fafc;
+    position: relative;
+    overflow: visible;
+    z-index: 1;
+}
+
+/* Modal Footer Buttons */
+.orders-management-modal-footer .orders-management-btn {
+    padding: 4px 8px;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.orders-management-modal-footer .orders-management-btn-secondary {
+    background: #7f8695;
+    color: white;
+    margin-right: -10px;
+    height: 30px;
+    width: 70px;
+    min-width: 70px;
+    max-width: 70px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 8px;
+}
+
+.orders-management-modal-footer .orders-management-btn-secondary:hover {
+    background: #4b5563;
+}
+
+.orders-management-modal-footer .orders-management-btn-secondary:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+.orders-management-modal-footer .orders-management-btn-secondary:active {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+.orders-management-modal-footer .orders-management-btn-primary {
+    background: #2c77d5;
+    color: white;
+    margin-left: 8px;
+    height: 30px;
+    width: 30px;
+    min-width: 40px;
+    max-width: 40px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 8px;
+}
+
+.orders-management-modal-footer .orders-management-btn-primary:hover {
+    background: #1a4a87;
+}
+
+.orders-management-modal-footer .orders-management-btn-primary:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+.orders-management-modal-footer .orders-management-btn-primary:active {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+.orders-management-modal-footer .orders-management-btn-warning {
+    background: #2c77d5;
+    color: white;
+    margin-right: -10px;
+    height: 30px;
+    width: 70px;
+    min-width: 70px;
+    max-width: 70px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 8px;
+}
+
+/* Dropdown Wrapper */
+.orders-management-dropdown-wrapper {
+    position: relative !important;
+    display: inline-block !important;
+}
+
+/* Dropdown Menu */
+.orders-management-dropdown-menu,
+.orders-management-order-dropdown-menu {
+    position: fixed !important;
+    background: white !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+    z-index: 99999 !important;
+    width: 140px !important;
+    max-width: 140px !important;
+    min-width: 140px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    overflow: hidden !important;
+}
+
+/* Dropdown Items */
+.orders-management-dropdown-menu button,
+.orders-management-order-dropdown-menu button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 12px 16px !important;
+    background: none !important;
+    border: none !important;
+    text-align: left !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #374151 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    gap: 8px !important;
+}
+
+.orders-management-dropdown-menu button:hover,
+.orders-management-order-dropdown-menu button:hover {
+    background: #f3f4f6 !important;
+    color: #1f2937 !important;
+    transform: translateX(2px) !important;
+}
+
+.orders-management-dropdown-menu button:first-child,
+.orders-management-order-dropdown-menu button:first-child {
+    border-radius: 8px 8px 0 0 !important;
+}
+
+.orders-management-dropdown-menu button:last-child,
+.orders-management-order-dropdown-menu button:last-child {
+    border-radius: 0 0 8px 8px !important;
+}
+
+/* Specific styling for cancel and return buttons */
+.orders-management-order-dropdown-menu button:first-child {
+    color: #dc2626 !important; /* Red color for cancel */
+}
+
+.orders-management-order-dropdown-menu button:first-child:hover {
+    background: #fef2f2 !important;
+    color: #b91c1c !important;
+}
+
+.orders-management-order-dropdown-menu button:last-child {
+    color: #ea580c !important; /* Orange color for return */
+}
+
+.orders-management-order-dropdown-menu button:last-child:hover {
+    background: #fff7ed !important;
+    color: #c2410c !important;
+}
+
+.orders-management-modal-overlay-confirm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.orders-management-modal-content-confirm {
+    width: 400px;        /* Thu nhỏ chiều rộng */
+    max-width: 90%;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.orders-management-modal-header-confirm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #3C95FB;
+}
+
+.orders-management-modal-header-confirm h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.orders-management-modal-body-confirm {
+    padding: 20px;
+    text-align: left;
+}
+
+.orders-management-modal-body-confirm p {
+    color: #000 !important;
+    font-size: 14px;
+    text-align: center;
+}
+
+.orders-management-modal-footer-confirm {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 16px 20px;
+    border-top: 1px solid #e5e7eb;
+    background: #f8fafc;
+}
+
+/* Buttons */
+.orders-management-btn.orders-management-btn-secondary-confirm {
+    background: #7f8695;
+    color: white;
+    height: 30px;
+    width: 70px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.orders-management-btn.orders-management-btn-secondary-confirm:hover {
+    background: #4b5563;
+}
+
+.orders-management-btn.orders-management-btn-danger-confirm {
+    background: rgba(140, 28, 28, 0.82);
+    color: white;
+    height: 30px;
+    width: 90px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.orders-management-btn.orders-management-btn-danger-confirm:hover {
+    background: #2b1111;
+}
+
+@media (max-width: 768px) {
+    .orders-management-modal-overlay-confirm {
+        padding: 10px;
+    }
+
+    .orders-management-modal-content-confirm {
+        max-height: 95vh;
+    }
+
+    .orders-management-modal-body-confirm {
+        padding: 16px;
+    }
+
+    .orders-management-modal-footer-confirm {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+    .orders-management-modal-overlay {
+        padding: 10px;
+    }
+
+    .orders-management-modal-content {
+        max-height: 95vh;
+    }
+
+    .orders-management-modal-body {
+        padding: 16px;
+    }
+
+    .orders-management-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .orders-management-items-header,
+    .orders-management-item-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .orders-management-col-price,
+    .orders-management-col-quantity,
+    .orders-management-col-total {
+        justify-content: flex-start;
+    }
+
+    .orders-management-modal-footer {
+        flex-direction: column;
+    }
+}
+

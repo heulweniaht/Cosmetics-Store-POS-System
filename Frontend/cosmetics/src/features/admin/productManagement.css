@@ -1,0 +1,175 @@
+.button-page-admin {
+  background: #fff;
+  border: 1px solid #3b82f6;
+  margin: 2px;
+  color: #3b82f6;
+}
+
+.button-page-admin:hover {
+  background: #3b82f6;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+
+.button-page-admin:focus {
+  background: #3b82f6;
+  color: #fff;
+  outline: none;
+}
+
+.modal-product {
+  z-index: 1000;
+  width: 700px;
+  height: 485px;
+  position: fixed;
+  top: 150px;
+  left: 500px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  animation: slideUp 0.3s ease-out;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 999; /* thấp hơn form */
+  transition: all 0.3s ease;
+}
+
+.modal-product .header-modal-product {
+  background: #3b82f6;
+  border-radius: 16px 16px 0 0;
+  height: 60px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+form {
+  margin-top: 10px;
+}
+
+form .type-product-one {
+  text-align: start;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+form .type-product-one input {
+  outline: none;
+  margin-left: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  height: 35px;
+  padding-left: 10px;
+  border-radius: 5px;
+  width: 537px;
+  color: black;
+}
+
+form .type-product-one label {
+  font-weight: 600;
+}
+
+form .type-product-one input:focus {
+  border: 1px solid #3b82f6;
+}
+
+form .type-product-two {
+  text-align: start;
+  margin: 0 20px 10px 20px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+form .type-product-two input {
+  outline: none;
+  background: #fff;
+  border: 1px solid #ddd;
+  height: 35px;
+  padding-left: 10px;
+  border-radius: 5px;
+  width: 300px;
+  color: black;
+}
+
+form .type-product-two label {
+  font-weight: 600;
+}
+
+form .type-product-two input:focus {
+  border: 1px solid #3b82f6;
+}
+
+form .type-product-three {
+  text-align: start;
+  margin: 0 20px 10px 20px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+form .type-product-three input {
+  outline: none;
+  background: #fff;
+  border: 1px solid #ddd;
+  height: 35px;
+  padding-left: 10px;
+  border-radius: 5px;
+  width: 185px;
+  color: black;
+}
+
+form .type-product-three label {
+  font-weight: 600;
+}
+
+form .type-product-three input:focus {
+  border: 1px solid #3b82f6;
+}
+
+form .textarea-product {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  text-align: start;
+}
+
+form .textarea-product label {
+  font-weight: 600;
+}
+
+form .textarea-product textarea {
+  outline: none;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding-left: 10px;
+  padding-top: 10px;
+  border-radius: 5px;
+  color: black;
+}
+
+form .textarea-product textarea:focus {
+  border: 1px solid #3b82f6;
+}
+
+form button {
+  background: #fff;
+  outline: none;
+  color: #3b82f6;
+  margin-top: 10px;
+  border: 1px solid #3b82f6;
+}
+
+form button:hover {
+  color: #fff;
+  background: #3b82f6;
+  transition: all 0.4s ease;
+}

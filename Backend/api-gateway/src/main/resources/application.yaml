@@ -1,0 +1,112 @@
+
+server:
+  port: 8888
+
+app:
+  api-prefix: /api/v1
+
+jwt:
+  signerKey: "1TjXchw5FloESb63Kc+DFhTARvpWL4jUGCwfGWxuG5SIf/1y/LgJxHnMqaF6A/ij"
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials
+#      globalcors:
+#        corsConfigurations:
+#          '[/**]':
+#            allowedOrigins:
+#              - "http://localhost:8080"
+#              - "http://localhost:3000"
+#              - "http://localhost:5173"
+#            allowedMethods:
+#              - GET
+#              - POST
+#              - PUT
+#              - DELETE
+#              - OPTIONS
+#            allowedHeaders:
+#              - "*"
+#            allowCredentials: true
+      routes:
+        # ⭐ SPECIFIC ROUTES TRƯỚC (stats endpoints)
+        - id: product_service_stats
+          uri: lb://product-service
+          predicates:
+            - Path=${app.api-prefix}/products/stats/**
+          filters:
+            - StripPrefix=2
+
+        - id: identity_service_stats
+          uri: lb://identity-service
+          predicates:
+            - Path=${app.api-prefix}/identity/users/stats/**
+          filters:
+            - StripPrefix=2
+
+        # ⭐ AUTH ROUTES 
+        - id: identity_service_auth
+          uri: lb://identity-service
+          predicates:
+            - Path=${app.api-prefix}/identity/auth/**
+          filters:
+            - StripPrefix=2
+
+        # ⭐ GENERIC ROUTES SAU
+        - id: identity_service
+          uri: lb://identity-service
+          predicates:
+            - Path=${app.api-prefix}/identity/**
+          filters:
+            - StripPrefix=2
+        - id: product_service
+          uri: lb://product-service
+          predicates:
+            - Path=${app.api-prefix}/products/**
+          filters:
+            - StripPrefix=2
+        - id: cart_service 
+          uri: lb://cart-service
+          predicates:
+            - Path=${app.api-prefix}/orders/** 
+          filters:
+            - StripPrefix=2
+
+
+        - id: invoice_service_reports 
+          uri: lb://invoice-service
+          predicates:
+            - Path=${app.api-prefix}/reports/**
+          filters:
+            - StripPrefix=2
+
+        - id: invoice_service_view
+          uri: lb://invoice-service
+          predicates:
+            - Path=${app.api-prefix}/invoices/**
+          filters:
+            - StripPrefix=2
+        - id: payment_service
+          uri: lb://payment-service
+          predicates:
+            - Path=${app.api-prefix}/momo-payment/**
+          filters:
+            - StripPrefix=2
+        - id: payment_service_vnpay
+          uri: lb://payment-service
+          predicates:
+            - Path=${app.api-prefix}/vnpay-payment/**
+          filters:
+            - StripPrefix=2

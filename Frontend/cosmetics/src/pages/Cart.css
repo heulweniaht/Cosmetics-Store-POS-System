@@ -1,0 +1,181 @@
+/* Frontend/cosmetics/src/pages/Cart.css */
+
+.cart-page {
+    padding: 20px;
+    background: #f8fafc;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* --- Header Box (Giống trang Đơn hàng) --- */
+.page-header-box {
+    background-color: #fff;
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    border-left: 5px solid #3C95FB; /* Viền xanh thương hiệu */
+}
+
+.page-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #265B9F;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* --- Search Bar --- */
+.search-filter-bar {
+    background: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.search-container {
+    position: relative;
+    max-width: 400px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6b7280;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 10px 10px 36px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    outline: none;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.search-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* --- Table Styles --- */
+.orders-table-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Cố định layout để cột không bị nhảy */
+}
+
+.orders-table thead {
+    background-color: #f9fafb;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.orders-table th {
+    padding: 14px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #4b5563;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.orders-table td {
+    padding: 14px 12px;
+    font-size: 13px;
+    color: #374151;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: middle;
+    height: 64px; /* Chiều cao cố định cho dòng */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.orders-table tr:hover {
+    background-color: #f8fafc;
+}
+
+.orders-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- Alignment Utilities --- */
+.text-center { text-align: center !important; }
+.text-left { text-align: left !important; }
+.text-right { text-align: right !important; }
+
+/* --- Cột Thao Tác (Căn chỉnh đặc biệt) --- */
+.orders-table th:last-child,
+.orders-table td:last-child {
+    text-align: center !important;
+    padding-left: 0 !important;  /* Xóa padding ngang để căn giữa chuẩn */
+    padding-right: 0 !important;
+}
+
+/* --- Status Badge --- */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 110px;
+    height: 28px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* --- Action Button (Con mắt hình tròn) --- */
+.action-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%; /* Hình tròn */
+    border: 1px solid #d1d5db; /* Viền xám nhạt */
+    background-color: white;
+    color: #6b7280;
+    transition: all 0.2s;
+    display: flex; /* Dùng flex để căn icon vào chính giữa nút */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0 auto; /* Căn nút vào giữa ô td */
+    padding: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.action-btn:hover {
+    background-color: #eff6ff;
+    color: #3b82f6;
+    border-color: #3b82f6;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.action-btn i {
+    font-size: 14px; /* Kích thước icon */
+}
+
+/* --- Empty State --- */
+.empty-state {
+    padding: 60px !important;
+    text-align: center;
+    color: #9ca3af;
+    font-size: 14px;
+}
